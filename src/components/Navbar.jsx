@@ -74,7 +74,6 @@ export default function Navbar() {
                                                 <button
                                                     className="relative px-4 py-2 text-gray-700 hover:text-gray-900 font-medium transition-all duration-200 group-hover:bg-gray-50/50 rounded-lg"
                                                     onMouseEnter={() => setIsServicesOpen(true)}
-                                                    onMouseLeave={() => setIsServicesOpen(false)}
                                                 >
                                                     <span className="flex items-center gap-1 text-[#B944EA]">
                                                         {item.name}
@@ -86,7 +85,7 @@ export default function Navbar() {
                                                 {/* Services Mega Menu */}
                                                 {isServicesOpen && (
                                                     <div 
-                                                        className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 w-[800px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/50 p-4 animate-in slide-in-from-top-2 duration-300"
+                                                        className="absolute top-full left-1/2 transform -translate-x-1/2 w-[800px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/50 p-4 animate-in slide-in-from-top-2 duration-300"
                                                         onMouseEnter={() => setIsServicesOpen(true)}
                                                         onMouseLeave={() => setIsServicesOpen(false)}
                                                     >
