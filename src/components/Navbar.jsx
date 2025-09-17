@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Menu, X, ChevronDown, Sparkles, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { Button } from "./ui/button"
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -72,7 +73,7 @@ export default function Navbar() {
                                         {item.hasDropdown ? (
                                             <div className="relative group">
                                                 <button
-                                                    className="relative px-4 py-2 text-gray-700 hover:text-gray-900 font-medium transition-all duration-200 group-hover:bg-gray-50/50 rounded-lg"
+                                                    className="relative px-4 py-2 text-gray-700 hover:text-gray-900 font-medium transition-all duration-200 group-hover:bg-gray-50/50 rounded-lg cursor-pointer"
                                                     onMouseEnter={() => setIsServicesOpen(true)}
                                                 >
                                                     <span className="flex items-center gap-1 text-[#B944EA]">
@@ -129,14 +130,17 @@ export default function Navbar() {
 
                         {/* CTA Button */}
                         <div className="hidden lg:flex items-center space-x-4">
-                            <button className="px-6 py-2.5 text-white font-medium rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105" style={{background: 'linear-gradient(to right, #B944EA, #00B7FF)'}}>
+                            <Button 
+                            variant="outline"
+                            className="hover:bg-[#B944EA] hover:text-white bg-[#B944EA] text-white font-medium rounded-full cursor-pointer">
                                 Get Quote
-                            </button>
+                            </Button>
                         </div>
 
                         {/* Mobile menu button */}
                         <div className="lg:hidden">
-                            <button
+                            <Button
+                                variant="outline"
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                                 className="p-2 rounded-lg text-gray-700 hover:text-[#B944EA] hover:bg-gray-100/50 transition-all duration-200"
                             >
@@ -145,7 +149,7 @@ export default function Navbar() {
                                 ) : (
                                     <Menu className="h-6 w-6" />
                                 )}
-                            </button>
+                            </Button>
                         </div>
                     </div>
                 </div>
@@ -174,13 +178,14 @@ export default function Navbar() {
                                     <div key={item.name}>
                                         {item.hasDropdown ? (
                                             <div>
-                                                <button
+                                                <Button
+                                                    variant="outline"
                                                     onClick={() => setIsServicesOpen(!isServicesOpen)}
                                                     className="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50/50 rounded-lg transition-all duration-200"
                                                 >
                                                     <span className="font-medium">{item.name}</span>
                                                     <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
-                                                </button>
+                                                </Button>
                                                 
                                                 {isServicesOpen && (
                                                     <div className="ml-4 mt-2 space-y-1">
@@ -210,9 +215,11 @@ export default function Navbar() {
                             </div>
                             
                             <div className="mt-8 pt-6 border-t border-gray-200/50">
-                                <button className="w-full px-6 py-3 text-white font-medium rounded-full hover:shadow-lg transition-all duration-300" style={{background: 'linear-gradient(to right, #B944EA, #00B7FF)'}}>
+                                <Button 
+                                variant="outline"
+                                className="w-full px-6 py-3 text-[#B944EA] font-medium rounded-full hover:shadow-lg transition-all duration-300 cursor-pointer">
                                     Get Quote
-                                </button>
+                                </Button>
                             </div>
                         </div>
                     </div>
